@@ -1,0 +1,27 @@
+# Notes
+
+## Features:
+- `underlying_condition_yn` - whether the pateint has underlying conditions or not
+- `sex`
+- `age_group`
+- `sympton_status`
+
+## Classes:
+- `hosp_yn` - whether the patient was hospitalized
+- `icu_yn` - whether the pateint ended up in the icu
+- `death_yn` - whether the patient died
+
+
+Bool value must be set for each of the following in this order in an array:
+age_group_0 - 17 years
+age_group_18 to 49 years
+age_group_50 to 64 years
+age_group_65+ years
+sex_Female
+sex_Male
+underlying_conditions_yn_No
+underlying_conditions_yn_Yes
+symptom_status_Asymptomatic
+symptom_status_Symptomatic
+current_status_Laboratory-confirmed case
+current_status_Probable Case
