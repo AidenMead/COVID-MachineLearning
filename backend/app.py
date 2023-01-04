@@ -1,19 +1,14 @@
 from flask import Flask, request, Response
-import data.naivesBayes as NB
+import data.modelProcessing as NB
 import data.dataSource as DS
 
 app = Flask(__name__)
-
-@app.route('/test')
-def hello() :
-    return {'msg':"Hello"}, 200
 
 @app.route('/chart-data')
 def get_barchart():
     data = DS.get_demographic_rates()
     return data, 200
     
-
 @app.route('/demographics', methods=['POST'])
 def get_demographics():
     age_options = ['0-17 years', '18-49 years', '50-64 years', '65+ years']

@@ -12,14 +12,14 @@ export const ResultsContainer = ({prediction}) => {
             backgroundColor: ''
         }
 
-        if (value >= 0.1) {
-            style['backgroundColor'] = 'red'
+        if (value >= 0.15) {
+            style['border'] = '4px solid #ff0000'
             return style
-        } else if (value < 0.1 && value > 0.04) {
-            style['backgroundColor'] = 'yellow'
+        } else if (value < 0.15 && value >= 0.05) {
+            style['border'] = '4px solid #e6b800'
             return style
-        } else if (value < 0.04){
-            style['backgroundColor'] = 'green'
+        } else if (value < 0.05){
+            style['border'] = '4px solid #009933'
             return style
         }
     }
