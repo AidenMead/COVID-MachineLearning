@@ -10,6 +10,7 @@ scikit-learn = "*"
 numpy = "*"
 gunicorn = "*"
 requests = "*"
+waitress = "*"
 
 [dev-packages]
 
