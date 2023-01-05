@@ -9,6 +9,7 @@ pandas = "*"
 scikit-learn = "*"
 numpy = "*"
 gunicorn = "*"
+requests = "*"
 
 [dev-packages]
 
