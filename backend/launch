@@ -1,6 +1,4 @@
 echo "Installing pipenv and dependencies..."
 
-pip install pyenv 
-pyenv install 3.10.7
 pip install pipenv
 pipenv install
