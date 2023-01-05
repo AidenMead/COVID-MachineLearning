@@ -5,6 +5,19 @@ import numpy
 import pandas as pd
 import data.dataSource as ds
 
+# This code is the heart of the machine learning - this pulls the clean dataframe that was grathered from the CDC site,
+# drops the unnecessary columns, then splits the existing columns into binary columns (ex: splits age_group column which 
+# could have 4 values into 4 columns with a binary value to singal if that value is assigned to the record). Once the 
+# data is ready, if splits the data into the independent and dependent columns, then partitions the data into a training 
+# group and testing group. 
+# 
+# Finally, we use Bayesian Ridge algorithm wrapped in a MultiOutput Regressor. The Bayesian Ridge 
+# gives us the machine learning process method and the MultiOutput Regressor allows the code to address each possible 
+# output variable independently to allow multiple predictions at once. 
+# 
+# Once the model is trailed and assigned to the MOR value, we can then create a function that can be called at will 
+# for use when the API endpoint is hit during a request from the front end for a prediction.
+
 df = ds.single_df
 df = df.loc[:,['age_group','sex','underlying_conditions_yn','symptom_status', 'current_status','hosp_yn','icu_yn', 'death_yn']]
 
