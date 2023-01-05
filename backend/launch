@@ -1,4 +1,5 @@
 echo "Installing pipenv and dependencies..."
 
 pip install pipenv
+pipenv shell
 pipenv install
