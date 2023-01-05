@@ -1,5 +1,4 @@
-echo "Building..."
+echo "Installing pipenv and dependencies..."
 
-pip install --upgrade pip
 pip install pipenv
 pipenv install
