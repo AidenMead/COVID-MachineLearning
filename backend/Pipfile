@@ -13,6 +13,7 @@ joblib = "*"
 numpy = "*"
 scipy = "*"
 threadpoolctl = "*"
+gunicorn = "*"
 
 [dev-packages]
 
