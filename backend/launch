@@ -1,9 +1,4 @@
 echo "Building..."
 
-cd /backend
 pipenv shell
 pipenv install
-flask run
-
-cd ../ui
-npm start
