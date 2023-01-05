@@ -26,8 +26,10 @@ def cleaned_dataframe():
     df = get_data_as_dataframe('$where='+filter_obj['age']+ ' AND '+filter_obj['sex']+ ' AND '+filter_obj['comorbidity']+ ' AND '+filter_obj['symptoms']+ ' AND '+filter_obj['hosp']+ ' AND '+filter_obj['death']+ ' AND '+filter_obj['icu']+' AND '+filter_obj['current']+'&$limit=500000')
     return df
 
+single_df = cleaned_dataframe()
+
 def get_demographic_rates():
-    df = cleaned_dataframe()
+    df = single_df
     df = df.loc[:, ['symptom_status', 'sex', 'age_group', 'current_status','underlying_conditions_yn', 'hosp_yn', 'icu_yn', 'death_yn']]
 
     def findEventNumbers(demog, demogState, humanReadableDemogName):

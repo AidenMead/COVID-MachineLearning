@@ -9,7 +9,7 @@ export const MainContainer = () => {
     const [ results, setResults ] = useState()
 
     return (
-        <Sheet sx={{width: '100vw', display: 'flex', flexDirection: 'column', alignItems:'center', marginTop: '60px', backgroundColor: '#f2f2f2'}}>
+        <Sheet sx={{width: '100vw', display: 'flex', flexDirection: 'column', alignItems:'center', marginTop: '60px', backgroundColor: '#f2f2f2', minHeight: '85vh'}}>
             <Paper elevation={4} sx={{padding: 3, margin: 3, width: '858px'}}>
                 <InputForm setResults={setResults} />
                 {results && <ResultsContainer prediction={results} />}

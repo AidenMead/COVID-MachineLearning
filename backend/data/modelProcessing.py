@@ -5,7 +5,7 @@ import numpy
 import pandas as pd
 import data.dataSource as ds
 
-df = ds.cleaned_dataframe()
+df = ds.single_df
 df = df.loc[:,['age_group','sex','underlying_conditions_yn','symptom_status', 'current_status','hosp_yn','icu_yn', 'death_yn']]
 
 df = pd.get_dummies(df)
