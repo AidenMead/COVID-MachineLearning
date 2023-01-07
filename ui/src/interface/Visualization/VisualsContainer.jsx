@@ -11,7 +11,7 @@ export const VisualsContiner = () => {
     const [ totals, setTotals ] = useState()
 
     const getData = async () => {
-        await axios.get('/chart-data').then(resp => {
+        await axios.get('/api/chart-data').then(resp => {
             setData(resp.data.values_arr)
             setTotals(resp.data.total_counts)
             setIsLoading(false)

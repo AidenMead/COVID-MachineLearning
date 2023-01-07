@@ -1,8 +1,8 @@
 {
-  "name": "COVID Prediction UI",
+  "name": "COVID_Prediction_UI",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:5000",
+  "proxy": "https://cml-backend:5001",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",

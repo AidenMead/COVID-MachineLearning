@@ -1,0 +1,24 @@
+version: '3'
+services: 
+  ui:
+    container_name: cml-ui
+    build: 
+      context: ./ui
+    ports: 
+      - 3000:80
+    tty: true
+    volumes:
+      - ./ui:/client
+    image: cml-ui-image
+    depends_on:
+      - backend
+  backend:
+    container_name: cml-backend
+    build:
+      context: ./backend
+    ports: 
+      - 5001:5000
+    tty: true
+    volumes:
+      - ./backend:/api
+    image: cml-api-image

@@ -22,7 +22,7 @@ export const InputForm = ({ setResults }) => {
     const sendValues = async () => {
         await axios({
             method: 'POST',
-            url: '/demographics',
+            url: '/api/demographics',
             data: formValues
         }).then(resp => {
             setResults(resp.data)
