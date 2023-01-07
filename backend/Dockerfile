@@ -1,7 +1,7 @@
 FROM python:3.10
 WORKDIR /api
 
-RUN echo "Starting backen dbuild..."
+RUN echo "Starting backend build..."
 
 RUN pip install pipenv
 
