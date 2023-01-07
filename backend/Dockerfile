@@ -11,4 +11,4 @@ RUN pipenv install --system --deploy --ignore-pipfile
 
 ENV FLASK_ENV production
 
-CMD ["gunicorn", "-b", ":5001", "app:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:5001", "app:app"]
