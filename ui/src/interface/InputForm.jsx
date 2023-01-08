@@ -18,6 +18,7 @@ export const InputForm = ({ setResults }) => {
         symptomatic: '',
         currentStatus: ''
     })
+    const [ formError, setFormError ] = useState(false)
 
     const sendValues = async () => {
         await axios({
@@ -25,7 +26,11 @@ export const InputForm = ({ setResults }) => {
             url: '/api/demographics',
             data: formValues
         }).then(resp => {
-            setResults(resp.data)
+            if (resp.data.error) {
+                setFormError(true)
+            } else {
+                setResults(resp.data)
+            }
         })
     }
 
@@ -37,6 +42,7 @@ export const InputForm = ({ setResults }) => {
     }
 
     const handleSubmit = () => {
+        setFormError(false)
         sendValues()
     }
 
@@ -46,8 +52,7 @@ export const InputForm = ({ setResults }) => {
             <Divider />
             <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                 <Sheet>
-
-                    <StyledFormControl >
+                    <StyledFormControl required>
                         <InputLabel id='sexInputLabel'>Sex</InputLabel>
                         <Select label="Sex"
                             name='sex'
@@ -57,7 +62,7 @@ export const InputForm = ({ setResults }) => {
                             <MenuItem value={'Female'}>Female</MenuItem>
                         </Select>
                     </StyledFormControl>
-                    <StyledFormControl>
+                    <StyledFormControl required>
                         <InputLabel id='ageInputLabel'>Age</InputLabel>
                         <Select label="Age"
                             name='age'
@@ -71,7 +76,7 @@ export const InputForm = ({ setResults }) => {
                     </StyledFormControl>
                 </Sheet>
                 <Sheet>
-                    <StyledFormControl >
+                    <StyledFormControl required>
                         <InputLabel id='comorbidityInputLabel'>Underlying Conditions</InputLabel>
                         <Select label="Underlying Conditions"
                             name='comorbidity'
@@ -81,7 +86,7 @@ export const InputForm = ({ setResults }) => {
                             <MenuItem value={'No'}>No</MenuItem>
                         </Select>
                     </StyledFormControl>
-                    <StyledFormControl >
+                    <StyledFormControl required>
                         <InputLabel id='symtomaticLabel'>Symptom Status</InputLabel>
                         <Select label="Symptom Status"
                             name='symptomatic'
@@ -93,7 +98,7 @@ export const InputForm = ({ setResults }) => {
                     </StyledFormControl>
                 </Sheet>
                 <Sheet>
-                    <StyledFormControl >
+                    <StyledFormControl required>
                         <InputLabel id='currentStatusLabel'>COVID Status</InputLabel>
                         <Select label="COVID Status"
                             name='currentStatus'
@@ -106,6 +111,7 @@ export const InputForm = ({ setResults }) => {
                     <Button sx={{ width: '250px', height: '56px', marginLeft: '10px' }} variant="contained" onClick={handleSubmit}>Predict</Button>
                 </Sheet>
             </Box>
+            {formError && <Typography color='red' align='center' my={2}>All inputs must be filled before continuing. Check that all options have been filled and try again.</Typography>}
         </Box>
     )
 }

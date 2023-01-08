@@ -19,15 +19,15 @@ def get_demographics():
     curStat = request.json['currentStatus']
 
     if sex == '':
-        return {'error': 'Sex Empty'}, 401
+        return {'error': 'Sex Empty'}, 200
     if age == '':
-        return {'error': 'Age Empty'}, 401
+        return {'error': 'Age Empty'}, 200
     if comorbidity == '':
-        return {'error': 'Underlying Conditions Empty'}, 401
+        return {'error': 'Underlying Conditions Empty'}, 200
     if symptomatic == '':
-        return {'error': 'Symptomatic Empty'}, 401
+        return {'error': 'Symptomatic Empty'}, 200
     if curStat == '':
-        return {'error': 'COVID Status Empty'}, 401
+        return {'error': 'COVID Status Empty'}, 200
 
     pred_arr = []
     for range in age_options:

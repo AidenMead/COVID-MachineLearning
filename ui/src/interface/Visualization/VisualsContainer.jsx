@@ -33,7 +33,8 @@ export const VisualsContiner = () => {
             { isLoading ? 
             <Box sx={{ margin: 3 }}>
                 <Typography variant='h5' align='center'>Loading...</Typography>
-                <Box sx={{border: '4px solid green', borderRadius: 5, width: '200px', height: '10px', margin: '0 auto', position: 'relative'}}>
+                <Typography align='center'>(This can take a few moments)</Typography>
+                <Box sx={{border: '4px solid green', borderRadius: 5, width: '200px', height: '10px', margin: '20px auto', position: 'relative'}}>
                     <div class="progress-bar"></div>
                 </Box>
             </Box>
