@@ -4,13 +4,12 @@ services:
     container_name: cml-ui
     build: 
       context: ./ui
-    ports: 
-      - "3000:80"
     tty: true
     volumes:
       - ./ui:/client
     image: cml-ui-img
-    network_mode: "host"
+    networks: 
+      - server-network
   backend:
     container_name: cml-backend
     build:
@@ -21,4 +20,21 @@ services:
     volumes:
       - ./backend:/api
     image: cml-api-img
-    network_mode: "host"
+    networks: 
+      - server-network
+  webserver:
+    container_name: nginx-proxy
+    build: 
+      context: ./ui
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - ui
+    image: nginx-proxy-img
+    networks: 
+      - server-network
+
+networks: 
+  server-network:
+    driver: bridge
