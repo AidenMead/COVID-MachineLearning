@@ -1,4 +1,4 @@
-FROM node:18-alpine as client-build
+FROM node:18.13.0-alpine as client-build
 WORKDIR /client
 
 RUN echo 'Starting Frontend Build...'
