@@ -11,6 +11,7 @@ numpy = "*"
 gunicorn = "*"
 requests = "*"
 waitress = "*"
+gevent = "*"
 
 [dev-packages]
 

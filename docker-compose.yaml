@@ -5,7 +5,7 @@ services:
     build: 
       context: ./ui
     ports: 
-      - 80:80
+      - "3000:80"
     tty: true
     volumes:
       - ./ui:/client
@@ -15,7 +15,7 @@ services:
     build:
       context: ./backend
     ports: 
-      - 5001:5001
+      - "5001:5001"
     tty: true
     volumes:
       - ./backend:/api
