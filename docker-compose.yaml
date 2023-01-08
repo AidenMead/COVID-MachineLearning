@@ -10,6 +10,7 @@ services:
     volumes:
       - ./ui:/client
     image: cml-ui-img
+    network_mode: "host"
   backend:
     container_name: cml-backend
     build:
@@ -20,3 +21,4 @@ services:
     volumes:
       - ./backend:/api
     image: cml-api-img
+    network_mode: "host"
