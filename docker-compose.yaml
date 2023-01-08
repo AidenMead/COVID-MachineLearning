@@ -9,9 +9,7 @@ services:
     tty: true
     volumes:
       - ./ui:/client
-    image: cml-ui-image
-    depends_on:
-      - backend
+    image: cml-ui-img
   backend:
     container_name: cml-backend
     build:
@@ -21,4 +19,4 @@ services:
     tty: true
     volumes:
       - ./backend:/api
-    image: cml-api-image
+    image: cml-api-img

@@ -1,5 +1,5 @@
 {
-  "name": "COVID_Prediction_UI",
+  "name": "covid-ml-ui",
   "version": "0.1.0",
   "private": true,
   "proxy": "https://cml-backend:5001",

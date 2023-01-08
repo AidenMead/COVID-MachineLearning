@@ -82,6 +82,3 @@ def get_demographics():
                 death = 0
 
     return {'hosp': hosp, 'icu': icu, 'death': death}, 200
-
-if __name__ == '__main__':
-    app.run()
